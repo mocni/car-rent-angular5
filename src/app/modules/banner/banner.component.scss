@@ -1,0 +1,60 @@
+
+@mixin centerImage {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero{
+    background-image: url(../../../assets/img/hero.jpg);
+    @include centerImage;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "content";
+    grid-template-columns: 1fr;
+    &__title{
+        font-size: 90px;
+        color: #fff;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        @media(max-width: 640px){
+            font-size: 30px;
+        }
+    }
+    &__desc{
+        color: #fff;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 20px;
+        line-height: 32px;
+        @media(max-width: 640px){
+            font-size: 18px;
+            margin-top: 25px;
+                }
+    }
+    &__image{
+        @include centerImage;
+        background-image: url(../../../assets/img/banner.jpg);
+        align-self: center;
+        max-width: 1200px;
+        margin: 0 15px;
+        justify-self: center;
+        position: relative;
+    z-index: 2;
+        box-shadow: 0 30px 85px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        text-align: center;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }    
+}

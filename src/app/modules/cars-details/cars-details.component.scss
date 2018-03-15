@@ -1,0 +1,66 @@
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &__background{
+        background-size: cover;
+        background-size: cover;
+        flex: 1;
+    }   
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.grid__details{
+    grid-template-areas: "title title image" "desc desctwo image";
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px;
+    @media(max-width: 767px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "title image" "desc desctwo"
+    }
+    @media(max-width: 480px){
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "title" "image" "desc" "desctwo";
+    }
+    &--title{
+        align-self: self-end;
+        grid-area: title;
+    }
+    &--desc--two{
+        grid-area: desctwo;
+    }
+    &--image{
+        grid-area: image;
+        height: 100%;
+    }
+}
+
+.grid__car--specification{
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    margin: 80px 0 120px 0;
+    @media(max-width: 480px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.col{
+    text-align: center;
+}
+
+.ion{
+    font-size: 36px;
+    color: #5e5efc;
+}
+
+.main__image{
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}

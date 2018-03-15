@@ -1,0 +1,14 @@
+.footer{
+    background-image: url(../../../assets/img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 70px 0;
+}
+
+.grid__footer{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    @media(max-width: 640px){
+        grid-template-columns: 1fr;
+    }
+}

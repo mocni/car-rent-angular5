@@ -1,0 +1,96 @@
+@import "../../assets/variables";
+
+.grid{
+    &__navigation{
+        grid-template-columns: 150px auto 100px;
+        grid-template-areas: "logo menu cta";
+    }
+}
+
+.navigation{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    background: $black;
+    box-shadow: 0 3px 15px 1px rgba($black, 0.3);
+    padding: 15px 0;
+    &__contact{
+        grid-area: cta;
+    }
+    &__menu {
+        grid-area: menu;
+        align-self: center;
+    }
+    &__list{
+        grid-area: menu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: fit-content;
+        &--li{
+            flex: 1;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+        &--link{
+            margin: 0 10px;
+            font-family: $fontPrimary;
+            font-size: 19px;
+            color: #fff;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+    }
+    &__logo{
+        grid-area: logo;
+        align-self: center;
+        &--link{
+            color: #fff;
+            font-size: 32px;
+            font-family: $fontPrimary;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .navigation{
+        &__hamburger{
+            display: none;
+        }
+    }
+    .col__hidden--tablet{
+        display: block;
+    }
+}
+
+@media(max-width: 767px){
+    .col__hidden--mobile{
+        display: none;
+    }
+    .grid__navigation{
+        grid-template-areas: "logo cta hamburger" "menu menu menu";
+    }
+
+    .navigation{
+        &__contact{
+            justify-self: center;
+        }
+        &__list{
+            flex-direction: column;
+            width: 100%;
+            padding: 25px 0;
+            align-items: flex-start;
+            &--link{
+                line-height: 40px;
+            }
+        }
+        &__hamburger{
+            grid-area: hamburger;
+        }
+    }
+}

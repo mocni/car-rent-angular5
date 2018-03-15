@@ -1,0 +1,17 @@
+<main>
+  <div class="container grid grid__three">
+      <div class="col" *ngFor="let car of cars">
+        <figure>
+          <img src="{{car.thumbnail}}" class="img__responsive" alt="{{car.name}}" />
+         <div class="col__cars" routerLink="/car/{{car.id}}">
+            <h3 class="text">
+                {{car.name}}
+              </h3>
+              <h4 class="text">
+                Price: {{car.price}}
+              </h4>
+         </div>
+        </figure>
+      </div>
+  </div>
+</main>

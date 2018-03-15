@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+main{
+    margin-top: 140px;
+}
+
+
+.grid{
+    display: grid;
+    &__main{
+        grid-template: 
+        "navigation"
+        "banner"
+        "content"
+        "footer";
+        &--navigation{
+            grid-area: navigation;
+        }
+    }
+}
+
+.text{
+    line-height: 33px;
+    // margin-top: 20px;
+    // color: #333;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    font-weight: 400;
+    &__white{
+        color: #fff;
+    }
+    &__center{
+        text-align: center;
+    }
+}
+
+.heading{
+    margin-top: 0;
+    color: #333;
+    font-family: "Raleway", sans-serif;
+    &__subtitle{
+        line-height: 33px;
+    }
+    &__title{
+        font-size: 48px;
+    }
+    &__line{
+        height: 2px;
+        width: 35px;
+        background: #f333;
+        display: block;
+    }
+}
+
+.col{
+    &__align{
+        align-self: center;
+    }
+}
+
+.link{
+    font-family: "Raleway", sans-serif;
+    color: #eee;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    display: inline-block;
+    transition: 0.3s;
+    &:hover{
+        color: #ffc0cb;
+        border-color: #ffc0cb;
+    }
+}
+
+.container__holder{
+    display: grid;
+    grid-template-areas: "line content";
+    grid-gap: 15px;
+    &--text{
+        position: relative;
+    top: -15px;
+    }
+}
+
+.grid{
+    &__two{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        @media(max-width: 640px){
+            grid-template-columns: 1fr;
+        }
+    }
+}
